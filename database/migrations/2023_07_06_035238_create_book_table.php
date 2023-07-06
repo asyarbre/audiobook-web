@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('author');
             $table->longText('description');
+            $table->enum('category', ['buku-anak', 'fiksi', 'non-fiksi']);
             $table->timestamps();
         });
     }
