@@ -14,11 +14,27 @@
     <div class="flex flex-col sm:flex-row">
         <x-sidebar />
 
-        <div class="flex flex-col w-full h-screen sm:w-5/6 px-4 pr-4">
+        <div class="flex flex-col w-full max-h-screen sm:w-5/6 px-4 pr-4">
             <x-dash-nav />
+            @include('components.toast')
             @yield('content')
         </div>
     </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var toast = document.getElementById('myToast');
+                toast.classList.add(
+                'hidden');
+            },
+            3000);
+        });
+    </script>
+
+
 </body>
 
 </html>
