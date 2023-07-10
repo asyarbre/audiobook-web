@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,6 @@ Route::get('/', function () {
 });
 
 Route::prefix('dashboard')->group(function () {
-    //route resource with named route
     Route::resource('book', BookController::class)->name('index', 'book.index');
+    Route::resource('content', ContentController::class)->name('index', 'content.index');
 });

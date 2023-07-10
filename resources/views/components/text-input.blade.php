@@ -1,3 +1,1 @@
-@props(['disabled' => false])
-
-<input {{ $disabled ? 'disable' : '' }} {{ $attributes->merge(['class' => 'input input-bordered w-full']) }} />
+<input {{ $attributes->merge(['class' => 'input input-bordered w-full']) }} />
