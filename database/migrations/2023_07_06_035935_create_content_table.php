@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('content', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('book_id')->constrained('book')->onDelete('cascade');
             $table->string('audio');
             $table->string('book_content');
-            $table->foreignId('book_id')->constrained('book')->onDelete('cascade');
+            $table->integer('page');
             $table->timestamps();
         });
     }

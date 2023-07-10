@@ -17,4 +17,9 @@ class Book extends Model
         'description',
         'category',
     ];
+
+    public function content()
+    {
+        return $this->hasMany(Content::class);
+    }
 }
