@@ -10,7 +10,7 @@
                         Username
                     </summary>
                     <ul class="p-2 bg-base-100">
-                        <li><a>Log Out</a></li>
+                        <li><a href="{{ route('auth.logout')}}">Log Out</a></li>
                     </ul>
                 </details>
             </li>
