@@ -6,6 +6,7 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class BookController extends Controller
 {
@@ -58,9 +59,12 @@ class BookController extends Controller
         $cover_name = date('YmdHis') . "." . $cover_ext;
         $cover_file->move(public_path('storage/cover'), $cover_name);
 
+        $slug = Str::of($request->title)->slug('-');
+
         $data = [
             'cover' => $cover_name,
             'title' => $request->title,
+            'slug' => $slug,
             'author' => $request->author,
             'description' => $request->description,
             'category' => $request->category
