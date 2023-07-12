@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     @vite('resources/css/app.css')
+
+    {{-- Alphine JS --}}
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
 
     {{-- Navbar --}}
-    <nav class="py-6 px-4">
+    <nav class="py-6 px-4" x-data="{navOpen :true}">
          @yield('navbar')
     </nav>
 
