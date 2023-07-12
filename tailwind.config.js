@@ -5,11 +5,15 @@ export default {
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily:{
+                'Poppins' : "'Poppins', sans-serif;"
+            },
+        },
     },
     plugins: [require("daisyui")],
     daisyui: {
-        themes: ["emerald"],
+        themes: ["light","emerald"],
     },
 };
 
