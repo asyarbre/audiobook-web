@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Landing Page
-Route::get('/',[LandingController::class, 'index']);
+Route::get('/',[LandingController::class, 'index','title']);
 
 
 Route::prefix('dashboard')->middleware('isLogin')->group(function () {

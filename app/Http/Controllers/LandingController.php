@@ -17,4 +17,12 @@ class LandingController extends Controller
         ];
         return view("landing/index")->with($data);
     }
+
+    function title(){
+      
+    }
+
+    function detailData(){
+
+    }
 }
