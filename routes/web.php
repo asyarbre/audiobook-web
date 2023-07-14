@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/landing', function () {
+//     return view('halaman-utama');
+// });
+
+// Landing Page
+Route::get('/',[LandingController::class, 'index','title']);
+
 
 Route::prefix('dashboard')->middleware('isLogin')->group(function () {
     Route::resource('book', BookController::class)->name('index', 'book.index');
