@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('cover')->nullable();
             $table->string('title');
+            $table->string('slug');
             $table->string('author');
             $table->longText('description');
             $table->enum('category', ['buku-anak', 'fiksi', 'non-fiksi']);

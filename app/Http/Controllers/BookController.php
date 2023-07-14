@@ -6,6 +6,7 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class BookController extends Controller
 {
@@ -58,9 +59,12 @@ class BookController extends Controller
         $cover_name = date('YmdHis') . "." . $cover_ext;
         $cover_file->move(public_path('storage/cover'), $cover_name);
 
+        $slug = Str::of($request->title)->slug('-');
+
         $data = [
             'cover' => $cover_name,
             'title' => $request->title,
+            'slug' => $slug,
             'author' => $request->author,
             'description' => $request->description,
             'category' => $request->category
@@ -73,9 +77,10 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        //
+        $data = Book::where('slug', $slug)->first();
+        return view('landing.details')->with('data', $data);
     }
 
     /**
@@ -142,7 +147,7 @@ class BookController extends Controller
     {
         $data = Book::where('id', $id)->first();
         File::delete(public_path('storage/cover/' . $data->cover));
-        
+
         Book::where('id', $id)->delete();
         return redirect()->route('book.index')->with('success', 'Data berhasil dihapus');
     }
