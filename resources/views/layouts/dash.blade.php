@@ -10,7 +10,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body data-theme="emerald">
     <div class="flex flex-col sm:flex-row">
         <x-sidebar />
 

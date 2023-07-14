@@ -10,7 +10,7 @@
 </head>
 
 <body data-theme="emerald">
-    <div class="h-screen md:mx-auto md:max-w-2xl lg:max-w-4xl flex flex-col justify-between p-4 md:p-8">
+    <div class="h-screen md:mx-auto md:h-auto md:max-w-2xl lg:max-w-4xl flex flex-col justify-between p-4 md:p-8">
         <div class="text-center grow">
             <a href="{{ url('read') . '/' . $data->slug}}" class="mt-4">
                 <x-fas-arrow-left class="w-6 h-6" />

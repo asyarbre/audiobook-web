@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body data-theme="emerald">
     <div class="min-h-screen px-5 sm:px-0 bg-base-300 flex items-center">
         @include('components.toast')
         @yield('content')

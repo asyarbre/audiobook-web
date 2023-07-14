@@ -90,9 +90,13 @@ class ContentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        //
+        $data = Content::whereHas('book', function ($query) use ($slug) {
+            $query->where('slug', $slug);
+        })->orderBy('page', 'ASC')->get();
+
+        return view('landing.read')->with('data', $data);
     }
 
     /**
