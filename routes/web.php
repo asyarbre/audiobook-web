@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 // Landing Page
 Route::get('/',[LandingController::class, 'index','title']);
 
+Route::get('/book/{slug}', [BookController::class, 'show'])->name('book.details');
 
 Route::prefix('dashboard')->middleware('isLogin')->group(function () {
     Route::resource('book', BookController::class)->name('index', 'book.index');

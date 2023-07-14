@@ -77,9 +77,10 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        //
+        $data = Book::where('slug', $slug)->first();
+        return view('landing.details')->with('data', $data);
     }
 
     /**
@@ -146,7 +147,7 @@ class BookController extends Controller
     {
         $data = Book::where('id', $id)->first();
         File::delete(public_path('storage/cover/' . $data->cover));
-        
+
         Book::where('id', $id)->delete();
         return redirect()->route('book.index')->with('success', 'Data berhasil dihapus');
     }
