@@ -10,16 +10,30 @@
     {{-- Alphine JS --}}
     <script src="//unpkg.com/alpinejs" defer></script>
     
+    {{-- Style Swipe Card --}}
+    <style>
+    swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    </style>
+
 </head>
 <body>
 
     {{-- Navbar --}}
     <nav class="py-6 px-4 bg-gradient-to-r from-purple-500  to-orange-400" x-data="{navOpen : true}">
-         @yield('navbar')
+         <x-navbar-landing/>
     </nav>
 
     {{-- Content-1 | Penjelasan Audio Book --}}
-    <div class="w-full h-64 bg-red-200">
+    <div class="w-full h-full bg-red-200">
         @yield('content')
     </div>
     
@@ -36,6 +50,10 @@
         @yield('content-4')
     </div>
 
+    {{-- Footer --}}
+    <div>
+        <x-footer-landing/>
+    </div>
 
     {{-- Icons --}}
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
