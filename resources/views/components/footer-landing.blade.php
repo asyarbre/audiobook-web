@@ -1,46 +1,36 @@
-<div class="containerfluid pt-32">
-    <div class="flex flex-wrap bg-Footer"> 
-            <div class="w-full px-4 py-5  mb-5 md:w-1/4">
-                <p class="text-left text-white font-Poppins font-medium md:py-5 md:px-5 md:mx-5 ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facere quibusdam ratione. Delectus, perferendis quo.
-                </p>
-            </div>
-            <div class="w-full px-4 py-5  mb-5 md:w-1/4">
-                <p class="text-left text-white font-Poppins font-medium md:py-5 md:px-5 md:mx-5 ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facere quibusdam ratione. Delectus, perferendis quo.
-                </p>
-            </div>
-            <div class="w-full px-4 py-5 mb-5 md:w-1/4">
-                <h3 class="text-xl text-white font-Poppins font-light mb-5">Category</h3>
-                <ul class="text-slate-300">
-                    <li>
-                        <a href="http://" class="inline-block text-base text-gray-300 hover:text-white mb-3">Fiksi</a>
-                    </li>
-                    <li>
-                        <a href="http://" class="inline-block text-base text-gray-300 hover:text-white mb-3">Non-Fiksi</a>
-                    </li>
-                    <li>
-                        <a href="http://" class="inline-block text-base text-gray-300 hover:text-white mb-3">Anak</a>
-                    </li>
-                </ul>
-            </div>
-        <div class="w-full px-4 py-5  mb-5 md:w-1/4">
-                <h3 class="text-xl text-white font-Poppins font-light mb-5">Follow Us</h3>
-            <ul class="text-slate-300">
-                <li>
-                    <a href="http://" class="inline-block text-base text-gray-300 hover:text-white mb-3">Facebook</a>
-                </li>
-                <li>
-                    <a href="http://" class="inline-block text-base text-gray-300 hover:text-white mb-3">Twitter</a>
-                </li>
-                <li>
-                    <a href="http://" class="inline-block text-base text-gray-300 hover:text-white mb-3">Instagram</a>
-                </li>
-                <li>
-                    <a href="http://" class="inline-block text-base text-gray-300 hover:text-white mb-3">Youtube</a>
-                </li>
-            </ul>
+<footer>
+    <div class="footer p-10 bg-base-200 text-base-content">
+        <div>
+            <img src="{{ url('images/logo-polimedia.png') }}" class="w-20 h-w-20" />
+            <p><span class="font-bold">Politeknik Negeri Media Kreatif</span><br />Jl. Srengseng Sawah, Kel. Srengseng
+                Sawah,
+                Kec. Jagakarsa, <br />Kota
+                Administrasi Jakarta Selatan, Provinsi DKI Jakarta, 12640</p>
         </div>
-        
+        <div>
+            <span class="footer-title">Kategori</span>
+            <a class="link link-hover">Buku Anak</a>
+            <a class="link link-hover">Fiksi</a>
+            <a class="link link-hover">Non Fiksi</a>
+        </div>
+        <div>
+            <span class="footer-title">Social</span>
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://www.instagram.com/polimediakreatif/?hl=id" target="_blank">
+                    <x-fab-instagram class="h-7 w-h-7" />
+                </a>
+                <a href="https://www.youtube.com/channel/UCjsVwFVV77QvGdLQyZrG0Jw" target="_blank">
+                    <x-fab-youtube class="h-7 w-h-7" />
+                </a>
+                <a href="https://open.spotify.com/show/5pTSDgVTw2V9ZPguXPrl2M" target="_blank">
+                    <x-fab-spotify class="h-7 w-h-7" />
+                </a>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="footer footer-center p-4 bg-base-300 text-base-content">
+        <div>
+            <p>Copyright © 2023 - All right reserved by Asya'ri & Nadhir Adhitya Z</p>
+        </div>
+    </div>
+</footer>

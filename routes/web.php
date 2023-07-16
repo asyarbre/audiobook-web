@@ -21,8 +21,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('halaman-utama');
 // });
 
-// Landing Page
-Route::get('/',[LandingController::class, 'index','title']);
+//route landing page use BookController function all_category
+Route::get('/', [LandingController::class, 'allCategory']);
+
 
 Route::get('/book/{slug}', [BookController::class, 'show'])->name('book.details');
 Route::get('/read/{slug}', [ContentController::class, 'show'])->name('book.read');
