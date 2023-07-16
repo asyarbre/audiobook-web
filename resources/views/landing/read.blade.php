@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.content')
 
-<head>
-    <meta charset="utf-8" />
-    <title>Read</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    @vite('resources/css/app.css')
-</head>
+@section('title')
+    {{ $data[0]->book->title }}
+@endsection
 
-<body data-theme="emerald">
+@section('content')
     <div class="w-full h-screen md:h-auto carousel">
         @php
             $lastPage = $data->last()->page;
         @endphp
         @foreach ($data as $item)
             <div id="page{{ $item->page }}" class="carousel-item w-full lg:relative flex-col gap-2">
-                <progress class="hidden lg:block lg:absolute progress progress-primary w-full" value="{{$item->page}}" max="{{ $lastPage }}"></progress>
+                <progress class="hidden lg:block lg:absolute progress progress-primary w-full" value="{{ $item->page }}"
+                    max="{{ $lastPage }}"></progress>
                 <div class="flex mt-4 mx-2 lg:justify-around lg:mx-auto lg:w-full justify-between">
-                    <a href="{{ url('book') . '/' . $item->book->slug }}" class="btn btn-circle btn-accent">
+                    <button onclick="backPage()" class="btn btn-circle btn-accent">
                         <x-fas-xmark class="w-6 h-6" />
-                    </a>
+                    </button>
                     <div>
                         <audio id="audio" controls>
                             <source src="{{ url('storage/audio') . '/' . $item->audio }}" type="audio/mpeg">
@@ -43,20 +40,4 @@
             </div>
         @endforeach
     </div>
-
-    {{-- <script>
-        function play() {
-            var audio = document.getElementById("audio");
-            var icon = document.getElementById("icon");
-            if (audio.paused) {
-                audio.play();
-                icon.innerHTML = '<x-fas-pause class="w-6 h-6" />';
-            } else {
-                audio.pause();
-                icon.innerHTML = '<x-fas-play class="w-6 h-6" />';
-            }
-        }
-    </script> --}}
-</body>
-
-</html>
+@endsection

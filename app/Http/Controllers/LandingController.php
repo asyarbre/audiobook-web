@@ -2,27 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
-    function index(){
-        $data = [
-            'judul'=>[
-                'header' => 'AudioBook Polimedia',
-                'kategori_semua' => 'All Categories',
-                'kategori_fiksi' => 'Fiksi',
-                'kategori_anak' => 'Anak',
-            ]
-        ];
-        return view("landing/index")->with($data);
+    public function allCategory()
+    {
+        $data = Book::all();
+        $dataBukuAnak = Book::where('category', 'buku-anak')->get();
+        $dataBukuFiksi = Book::where('category', 'fiksi')->get();
+        $dataBukuNonFiksi = Book::where('category', 'non-fiksi')->get();
+
+        return view('landing.index', [
+            'data' => $data,
+            'dataBukuAnak' => $dataBukuAnak,
+            'dataBukuFiksi' => $dataBukuFiksi,
+            'dataBukuNonFiksi' => $dataBukuNonFiksi
+        ]);
     }
 
-    function title(){
-      
+    public function show()
+    {
+        $data = Book::all();
+        return view('landing.show-all')->with('data', $data);
     }
 
-    function detailData(){
-
+    public function showByCategory(string $category)
+    {
+        $data = Book::where('category', $category)->get();
+        return view('landing.category')->with('data', $data);
     }
 }

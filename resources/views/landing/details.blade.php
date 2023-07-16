@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Book | {{ $data->title }}</title>
-    @vite('resources/css/app.css')
-</head>
+@section('title')
+    {{ $data->title }}
+@endsection
 
-<body data-theme="emerald">
+@section('content')
     <div class="h-screen md:mx-auto md:h-auto md:max-w-2xl lg:max-w-4xl flex flex-col justify-between p-4 md:p-8">
+        <button onclick="backPage()" class="mt-4">
+            <x-fas-arrow-left class="w-6 h-6" />
+        </button>
         <div class="text-center grow">
-            <a href="{{ url('read') . '/' . $data->slug}}" class="mt-4">
-                <x-fas-arrow-left class="w-6 h-6" />
-            </a>
             <div>
                 @if ($data->cover)
                     <img src="{{ url('storage/cover') . '/' . $data->cover }} " alt="{{ $data->title }}"
@@ -31,10 +26,7 @@
             </div>
         </div>
         <div class="mt-4">
-            <a href="{{ url('read') . '/' . $data->slug}}" class="btn btn-accent btn-block">Mulai Membaca</a>
+            <a href="{{ url('read') . '/' . $data->slug }}" class="btn btn-accent btn-block">Mulai Membaca</a>
         </div>
-
     </div>
-</body>
-
-</html>
+@endsection
