@@ -21,4 +21,16 @@ class LandingController extends Controller
             'dataBukuNonFiksi' => $dataBukuNonFiksi
         ]);
     }
+
+    public function show()
+    {
+        $data = Book::all();
+        return view('landing.show-all')->with('data', $data);
+    }
+
+    public function showByCategory(string $category)
+    {
+        $data = Book::where('category', $category)->get();
+        return view('landing.category')->with('data', $data);
+    }
 }

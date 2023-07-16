@@ -33,7 +33,7 @@
     <section id="all-category" class="w-full lg:max-w-6xl lg:mx-auto mt-8 px-4">
         <div class="flex justify-between gap-20 items-center">
             <h1 class="font-bold sm:text-lg text-gray-700">Semua Kategori</h1>
-            <a href="" class="text-primary text-sm">Lihat Semua</a>
+            <a href="{{ route('category.all-category') }}" class="text-primary text-sm">Lihat Semua</a>
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($data as $item)
@@ -53,7 +53,7 @@
     <section id="buku-anak" class="w-full lg:max-w-6xl lg:mx-auto mt-8 px-4">
         <div class="flex justify-between gap-20 items-center">
             <h1 class="font-bold sm:text-lg text-gray-700">Buku Anak</h1>
-            <a href="" class="text-primary text-sm">Lihat Semua</a>
+            <a href="{{ url('category') . '/' . 'buku-anak'}}" class="text-primary text-sm">Lihat Semua</a>
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuAnak as $item)
@@ -73,7 +73,7 @@
     <section id="buku-fiksi" class="w-full lg:max-w-6xl lg:mx-auto mt-8 px-4">
         <div class="flex justify-between gap-20 items-center">
             <h1 class="font-bold sm:text-lg text-gray-700">Buku Fiksi</h1>
-            <a href="" class="text-primary text-sm">Lihat Semua</a>
+            <a href="{{ url('category') . '/' . 'fiksi'}}" class="text-primary text-sm">Lihat Semua</a>
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuFiksi as $item)
@@ -93,7 +93,7 @@
     <section id="buku-non-fiksi" class="w-full lg:max-w-6xl lg:mx-auto mt-8 px-4">
         <div class="flex justify-between gap-20 items-center">
             <h1 class="font-bold sm:text-lg text-gray-700">Buku Non Fiksi</h1>
-            <a href="" class="text-primary text-sm">Lihat Semua</a>
+            <a href="{{ url('category') . '/' . 'non-fiksi'}}" class="text-primary text-sm">Lihat Semua</a>
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuNonFiksi as $item)
