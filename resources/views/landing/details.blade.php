@@ -6,9 +6,9 @@
 
 @section('content')
     <div class="h-screen md:mx-auto md:h-auto md:max-w-2xl lg:max-w-4xl flex flex-col justify-between p-4 md:p-8">
-        <button onclick="backPage()" class="mt-4">
+        <a href="{{ url('/')}}">
             <x-fas-arrow-left class="w-6 h-6" />
-        </button>
+        </a>
         <div class="text-center grow">
             <div>
                 @if ($data->cover)

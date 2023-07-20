@@ -5,9 +5,9 @@
 @section('content')
     <div class="w-full md:mx-auto md:max-w-2xl lg:max-w-4xl">
       <div class="flex items-center mt-4 ml-4 space-x-4">
-        <button onclick="backPage()" href="{{ url()->previous() }}" class="btn btn-circle btn-accent">
+        <a href="{{ url('/')}}" class="btn btn-circle btn-accent">
                 <x-fas-arrow-left class="w-6 h-6" />
-            </button>
+            </a>
         <h5 class="font-bold text-gray-700 text-lg">Semua Kategori</h5>
       </div>
       <div class="flex flex-wrap mt-8 px-2 justify-start">
