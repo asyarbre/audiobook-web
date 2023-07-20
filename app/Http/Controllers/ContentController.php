@@ -94,9 +94,14 @@ class ContentController extends Controller
     {
         $data = Content::whereHas('book', function ($query) use ($slug) {
             $query->where('slug', $slug);
-        })->orderBy('page', 'ASC')->get();
+        })->orderBy('page', 'ASC')->simplePaginate(1);
 
-        return view('landing.read')->with('data', $data);
+        //get data last page
+        $last_page = Content::all()->last()->page;
+
+        return view('landing.read')->with([
+            'data' => $data,
+            'last_page' => $last_page]);
     }
 
     /**

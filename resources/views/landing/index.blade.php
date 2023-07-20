@@ -1,6 +1,6 @@
 @extends('layouts.landing')
 
-@section('title', 'Audibook Polimedia')
+@section('title', 'Audiobook Polimedia')
 
 @section('content')
 
@@ -43,7 +43,7 @@
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
                                 class="rounded-box w-32 h-auto object-fill shadow-lg" />
                         @endif
-                        <h2 class="text-center font-semibold text-gray-600 mt-2">{{ $item->title }}</h2>
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
                     </a>
                 </div>
             @endforeach
@@ -63,7 +63,7 @@
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
                                 class="rounded-box w-32 h-auto object-fill shadow-lg" />
                         @endif
-                        <h2 class="text-center font-semibold text-gray-600 mt-2">{{ $item->title }}</h2>
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
                     </a>
                 </div>
             @endforeach
@@ -83,7 +83,7 @@
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
                                 class="rounded-box w-32 h-auto object-fill shadow-lg" />
                         @endif
-                        <h2 class="text-center font-semibold text-gray-600 mt-2">{{ $item->title }}</h2>
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
                     </a>
                 </div>
             @endforeach
@@ -103,7 +103,7 @@
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
                                 class="rounded-box w-32 h-auto object-fill shadow-lg" />
                         @endif
-                        <h2 class="text-center font-semibold text-gray-600 mt-2">{{ $item->title }}</h2>
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
                     </a>
                 </div>
             @endforeach

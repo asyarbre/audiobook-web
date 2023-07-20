@@ -14,10 +14,4 @@
     @yield('content')
 </body>
 
-<script>
-  function backPage() {
-    window.history.back();
-  }
-</script>
-
 </html>
