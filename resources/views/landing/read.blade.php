@@ -5,12 +5,11 @@
 @endsection
 
 @section('content')
-    <div class="w-full h-screen md:h-auto carousel">
+    <div class="w-full h-screen">
         @foreach ($data as $item)
-            <progress class="progress w-full absolute progress-primary" value="{{ $item->page }}"
-                max="{{ $last_page }}"></progress>
-            <div class="carousel-item w-full flex-col gap-2">
-                <div class="flex mt-4 justify-between mx-3 lg:justify-around">
+            <progress class="progress w-full progress-accent" value="{{ $item->page }}" max="{{ $last_page }}"></progress>
+            <div class="flex flex-col justify-evenly gap-10 lg:gap-0">
+                <div class="flex justify-between mt-3 px-3 lg:px-10">
                     <a href="{{ url('book') . '/' . $item->book->slug }}" class="btn btn-circle btn-accent">
                         <x-fas-xmark class="w-6 h-6" />
                     </a>
@@ -22,12 +21,13 @@
                     </button>
                 </div>
                 <img src="{{ url('storage/book_content') . '/' . $item->book_content }}" alt="{{ $item->book->title }}"
-                    class="w-[80%] h-full mx-auto sm:w-5/6 lg:w-2/5 md:h-auto object-fill" />
+                    class="w-full h-auto mx-auto lg:w-2/5 lg:mb-10" />
             </div>
         @endforeach
         {{ $data->links() }}
     </div>
 @endsection
+
 
 <script>
     function play() {
