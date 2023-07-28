@@ -12,7 +12,7 @@
                 {{ ucwords(str_replace('-', ' ', $data[0]->category)) }}
             </h5>
         </div>
-        <div class="flex flex-wrap mt-8 px-2 justify-start">
+        <div class="flex flex-wrap mt-8 px-2 justify-start items-end">
             @foreach ($data as $item)
                 <div class="basis-1/3 sm:basis-1/4 lg:basis-1/6 mt-2 px-2 hover:scale-110">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
