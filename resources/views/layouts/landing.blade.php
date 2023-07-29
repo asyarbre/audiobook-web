@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo-polimedia.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
@@ -16,7 +17,7 @@
 
 <body>
     {{-- Navbar --}}
-    <nav class="py-6 px-4 bg-gradient-to-r from-purple-500  to-orange-400" x-data="{ navOpen: true }">
+    <nav class="py-2 px-4 bg-base-200" x-data="{ navOpen: true }">
         <x-navbar-landing />
     </nav>
 

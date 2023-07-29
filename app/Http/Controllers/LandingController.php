@@ -33,4 +33,15 @@ class LandingController extends Controller
         $data = Book::where('category', $category)->get();
         return view('landing.category')->with('data', $data);
     }
+
+    public function search(Request $request) {
+        if($request->has('search')){
+            $data = Book::where('title','LIKE','%'.$request->search.'%')->get();
+        }else{
+            $data = Book::all();
+        }
+
+        return view('landing.index',['data' => $data]);
+    }
+
 }
