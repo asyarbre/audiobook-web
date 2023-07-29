@@ -12,15 +12,15 @@
                 {{ ucwords(str_replace('-', ' ', $data[0]->category)) }}
             </h5>
         </div>
-        <div class="flex flex-wrap mt-8 px-2 justify-start items-end">
+        <div class="flex flex-wrap mt-8 px-2 justify-start">
             @foreach ($data as $item)
                 <div class="basis-1/3 sm:basis-1/4 lg:basis-1/6 mt-2 px-2 hover:scale-110">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
-                                class="rounded-box w-full h-auto object-fill shadow-lg" />
+                                class="rounded-box w-full h-44 object-fill shadow-lg" />
                         @endif
-                        <h2 class="text-center font-semibold text-gray-600 mt-2">{{ $item->title }}</h2>
+                        <h2 class="text-center text-sm font-semibold text-gray-600 mt-2">{{ $item->title }}</h2>
                     </a>
                 </div>
             @endforeach
