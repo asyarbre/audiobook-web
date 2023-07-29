@@ -31,7 +31,7 @@ class LandingController extends Controller
     public function showByCategory(string $category)
     {
         $data = Book::where('category', $category)->get();
-        return view('landing.category')->with('data', $data);
+        return view('landing.show-by-category')->with('data', $data);
     }
 
     public function search(Request $request) {
