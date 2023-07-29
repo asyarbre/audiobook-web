@@ -9,9 +9,9 @@
         </div>
         <div>
             <span class="footer-title">Kategori</span>
-            <a class="link link-hover">Buku Anak</a>
-            <a class="link link-hover">Fiksi</a>
-            <a class="link link-hover">Non Fiksi</a>
+            <a class="link link-hover" href="{{ url('category') . '/' . 'buku-anak'}}">Buku Anak</a>
+            <a class="link link-hover" href="{{ url('category') . '/' . 'fiksi'}}">Fiksi</a>
+            <a class="link link-hover" href="{{ url('category') . '/' . 'non-fiksi'}}">Non Fiksi</a>
         </div>
         <div>
             <span class="footer-title">Social</span>
