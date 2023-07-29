@@ -59,7 +59,7 @@
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box ">
             @foreach ($data as $item)
-                <div class="carousel-item hover:scale-110 ">
+                <div class="carousel-item hover:scale-110 items-end">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
@@ -79,7 +79,7 @@
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuAnak as $item)
-                <div class="carousel-item hover:scale-110">
+                <div class="carousel-item hover:scale-110 items-end">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
@@ -99,7 +99,7 @@
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuFiksi as $item)
-                <div class="carousel-item hover:scale-110">
+                <div class="carousel-item hover:scale-110 items-end">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
@@ -119,7 +119,7 @@
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuNonFiksi as $item)
-                <div class="carousel-item hover:scale-110">
+                <div class="carousel-item hover:scale-110 items-end">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
