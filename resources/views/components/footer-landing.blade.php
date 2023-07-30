@@ -9,9 +9,9 @@
         </div>
         <div>
             <span class="footer-title">Kategori</span>
-            <a class="link link-hover">Buku Anak</a>
-            <a class="link link-hover">Fiksi</a>
-            <a class="link link-hover">Non Fiksi</a>
+            <a class="link link-hover" href="{{ url('category') . '/' . 'buku-anak'}}">Buku Anak</a>
+            <a class="link link-hover" href="{{ url('category') . '/' . 'fiksi'}}">Fiksi</a>
+            <a class="link link-hover" href="{{ url('category') . '/' . 'non-fiksi'}}">Non Fiksi</a>
         </div>
         <div>
             <span class="footer-title">Social</span>
@@ -30,7 +30,7 @@
     </div>
     <div class="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
-            <p>Copyright © 2023 - All right reserved by Asya'ri & Nadhir Adhitya Z</p>
+            <p>© by Asya'ri & Nadhir Adhitya Z 2023</p>
         </div>
     </div>
 </footer>

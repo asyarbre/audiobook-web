@@ -55,17 +55,17 @@
     <section id="all-category" class="w-full lg:max-w-6xl lg:mx-auto mt-8 px-4">
         <div class="flex justify-between gap-20 items-center">
             <h1 class="font-bold sm:text-lg text-gray-700">Semua Kategori</h1>
-            <a href="{{ route('category.all-category') }}" class="text-primary text-sm">Lihat Semua</a>
+            <a href="{{ route('category.all-category') }}" class="text-primary text-sm hover:text-secondary">Lihat Semua</a>
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box ">
             @foreach ($data as $item)
-                <div class="carousel-item hover:scale-110 items-end">
+                <div class="carousel-item hover:scale-110">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
                                 class="rounded-box w-32 h-44 object-fill shadow-lg" />
                         @endif
-                       
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
                     </a>
                 </div>
             @endforeach
@@ -75,11 +75,11 @@
     <section id="buku-anak" class="w-full lg:max-w-6xl lg:mx-auto mt-8 px-4">
         <div class="flex justify-between gap-20 items-center">
             <h1 class="font-bold sm:text-lg text-gray-700">Buku Anak</h1>
-            <a href="{{ url('category') . '/' . 'buku-anak'}}" class="text-primary text-sm">Lihat Semua</a>
+            <a href="{{ url('category') . '/' . 'buku-anak'}}" class="text-primary text-sm hover:text-secondary">Lihat Semua</a>
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuAnak as $item)
-                <div class="carousel-item hover:scale-110 items-end">
+                <div class="carousel-item hover:scale-110">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
@@ -95,11 +95,11 @@
     <section id="buku-fiksi" class="w-full lg:max-w-6xl lg:mx-auto mt-8 px-4">
         <div class="flex justify-between gap-20 items-center">
             <h1 class="font-bold sm:text-lg text-gray-700">Buku Fiksi</h1>
-            <a href="{{ url('category') . '/' . 'fiksi'}}" class="text-primary text-sm">Lihat Semua</a>
+            <a href="{{ url('category') . '/' . 'fiksi'}}" class="text-primary text-sm hover:text-secondary">Lihat Semua</a>
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuFiksi as $item)
-                <div class="carousel-item hover:scale-110 items-end">
+                <div class="carousel-item hover:scale-110">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
@@ -115,15 +115,15 @@
     <section id="buku-non-fiksi" class="w-full lg:max-w-6xl lg:mx-auto mt-8 px-4">
         <div class="flex justify-between gap-20 items-center">
             <h1 class="font-bold sm:text-lg text-gray-700">Buku Non Fiksi</h1>
-            <a href="{{ url('category') . '/' . 'non-fiksi'}}" class="text-primary text-sm">Lihat Semua</a>
+            <a href="{{ url('category') . '/' . 'non-fiksi'}}" class="text-primary text-sm hover:text-secondary">Lihat Semua</a>
         </div>
         <div class="carousel carousel-center w-full p-4 space-x-4 lg:space-x-8 rounded-box">
             @foreach ($dataBukuNonFiksi as $item)
-                <div class="carousel-item hover:scale-110 items-end">
+                <div class="carousel-item hover:scale-110">
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
-                                class="rounded-box w-32 h-auto object-fill shadow-lg" />
+                                class="rounded-box w-32 h-44 object-fill shadow-lg" />
                         @endif
                         <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
                     </a>
