@@ -17,9 +17,7 @@
 
 <body>
     {{-- Navbar --}}
-    <nav class="py-2 px-4 bg-base-200" x-data="{ navOpen: true }">
-        <x-navbar-landing />
-    </nav>
+    <x-navbar-landing />
 
     @yield('content')
 
