@@ -32,23 +32,17 @@
     </section>
 
     <section id="search-content" class="w-full mb-10">
-        <div class="lg:max-w-6xl lg:mx-auto mt-8 px-4">
-            <div class="text-center font-Poppins">
-                <h1 class="text-3xl">Search An Audiobook</h1>
-                <p class="text-sm text-slate-400 mt-2">Kalian bisa mencari audiobook yang kalian mau baca disini ..</p>
+        <div class="lg:max-w-6xl lg:mx-auto mt-8 px-4 font-Poppins">
+            <div class="bg-white-50 border border-gray-200 rounded-lg p-8 md:p-12 mb-8">
+                <h1 class="text-gray-900 text-3xl md:text-5xl font-extrabold mb-2">Search More Audio Book</h1>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">Kalian bisa mencari lebih audiobook yang kalian mau baca disini ..</p>
+                <a href="{{ url('/search-book')}}" class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    Search
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
             </div>
-            <form action="/search" method="GET" class="w-[60%] mx-auto mt-5 mb-10">   
-                <label for="default-search" class="mb-2 text-sm font-medium sr-only">Search</label>
-                <div class="relative">
-                    <div class="absolute top-6 md:inset-y-0 left-0 flex  items-center pl-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
-                    </div>
-                    <input type="search" name="search" id="default-search" class="input input-bordered block w-full py-8 pl-10 text-sm" placeholder="Search Audiobook ..." required>
-                    <button type="submit" class="w-full md:w-32 text-white md:absolute md:right-3 md:bottom-3 mt-5 mb-3 md:mt-0 md:mb-0  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-3">Search</button>
-                </div>
-            </form>
         </div>
     </section>
 

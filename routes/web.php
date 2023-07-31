@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [LandingController::class, 'allCategory'])->name('landing.index');
-Route::get('/search',[LandingController::class, 'search'])->name('landing.index');
+
+Route::get('/search-book', [LandingController::class, 'search'])->name('search.search-book');
 
 Route::get('/book/{slug}', [BookController::class, 'show'])->name('book.details');
 Route::get('/read/{slug}', [ContentController::class, 'show'])->name('book.read');

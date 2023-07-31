@@ -35,13 +35,13 @@ class LandingController extends Controller
     }
 
     public function search(Request $request) {
-        if($request->has('search')){
-            $data = Book::where('title','LIKE','%'.$request->search.'%')->get();
-        }else{
-            $data = Book::all();
-        }
+        $data = Book::query();
 
-        return view('landing.index',['data' => $data]);
+        $data->when($request->title, function ($query) use ($request){
+            return $query->where('title','like','%'.$request->title.'%');
+        });
+
+        return view('landing.search-book', ['data' => $data]);
     }
 
 }
