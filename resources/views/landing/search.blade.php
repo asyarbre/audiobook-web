@@ -13,7 +13,7 @@
                     <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
-                                class="rounded-box w-full h-44 object-fill shadow-lg" />
+                                class="rounded-box w-full h-32 md:h-44 object-fill shadow-lg" />
                         @endif
                         <h2 class="text-center text-sm font-semibold text-gray-600 mt-2">{{ $item->title }}</h2>
                     </a>
