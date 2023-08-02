@@ -31,17 +31,19 @@ class LandingController extends Controller
     public function showByCategory(string $category)
     {
         $data = Book::where('category', $category)->get();
-        return view('landing.category')->with('data', $data);
+        return view('landing.show-by-category')->with('data', $data);
     }
 
-    public function search(Request $request) {
-        $data = Book::query();
-
-        $data->when($request->title, function ($query) use ($request){
-            return $query->where('title','like','%'.$request->title.'%');
-        });
-
-        return view('landing.search-book', ['data' => $data]);
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        if($search) {
+            $data = Book::where('title', 'LIKE', '%' . $search . '%')->get();
+            return view('landing.search')->with('data', $data);
+        } else {
+            $data = [];
+            return view('landing.search')->with('data', $data);
+        }
     }
 
 }
