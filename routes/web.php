@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookPdfController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,7 @@ Route::prefix('category')->group(function () {
 Route::prefix('dashboard')->middleware('isLogin')->group(function () {
     Route::resource('book', BookController::class)->name('index', 'book.index');
     Route::resource('content', ContentController::class)->name('index', 'content.index');
+    Route::resource('bookpdf', BookPdfController::class)->name('index', 'bookpdf.index');
 });
 
 Route::get('/auth', [AuthenticationController::class, 'index'])->name('auth.index')->middleware('guest');
