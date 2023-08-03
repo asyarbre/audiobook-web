@@ -15,5 +15,6 @@ class Bookpdf extends Model
         'title',
         'slug',
         'category',
+        'content'
     ];
 }
