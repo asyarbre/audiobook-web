@@ -16,7 +16,7 @@ return new class () extends Migration {
             $table->string('title');
             $table->string('slug');
             $table->enum('category', ['buku-anak', 'fiksi', 'non-fiksi']);
-            $table->string('file');
+            $table->string('content');
             $table->timestamps();
         });
     }
