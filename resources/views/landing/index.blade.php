@@ -46,6 +46,17 @@
                     </a>
                 </div>
             @endforeach
+            @foreach ($dataAllBookPdf as $item)
+                <div class="carousel-item hover:scale-110">
+                    <a href="{{ url('book' . '/' . $item->slug) }}">
+                        @if ($item->cover)
+                            <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
+                                class="rounded-box w-32 h-44 object-fill shadow-lg" />
+                        @endif
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </section>
 
@@ -59,6 +70,17 @@
             @foreach ($dataBukuAnak as $item)
                 <div class="carousel-item hover:scale-110">
                     <a href="{{ url('audiobook' . '/' . $item->slug) }}">
+                        @if ($item->cover)
+                            <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
+                                class="rounded-box w-32 h-44 object-fill shadow-lg" />
+                        @endif
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
+                    </a>
+                </div>
+            @endforeach
+            @foreach ($dataBukuAnakPdf as $item)
+                <div class="carousel-item hover:scale-110">
+                    <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
                                 class="rounded-box w-32 h-44 object-fill shadow-lg" />
@@ -88,6 +110,17 @@
                     </a>
                 </div>
             @endforeach
+            @foreach ($dataBukuFiksiPdf as $item)
+                <div class="carousel-item hover:scale-110">
+                    <a href="{{ url('book' . '/' . $item->slug) }}">
+                        @if ($item->cover)
+                            <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
+                                class="rounded-box w-32 h-44 object-fill shadow-lg" />
+                        @endif
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </section>
 
@@ -101,6 +134,17 @@
             @foreach ($dataBukuNonFiksi as $item)
                 <div class="carousel-item hover:scale-110">
                     <a href="{{ url('audiobook' . '/' . $item->slug) }}">
+                        @if ($item->cover)
+                            <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
+                                class="rounded-box w-32 h-44 object-fill shadow-lg" />
+                        @endif
+                        <h2 class="text-center font-semibold w-28 mx-auto text-gray-600 mt-2">{{ $item->title }}</h2>
+                    </a>
+                </div>
+            @endforeach
+            @foreach ($dataBukuNonFiksiPdf as $item)
+                <div class="carousel-item hover:scale-110">
+                    <a href="{{ url('book' . '/' . $item->slug) }}">
                         @if ($item->cover)
                             <img src="{{ url('storage/cover' . '/' . $item->cover) }}" alt="{{ $item->title }}"
                                 class="rounded-box w-32 h-44 object-fill shadow-lg" />
