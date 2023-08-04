@@ -34,12 +34,14 @@ class LandingController extends Controller
     public function show()
     {
         $data = Book::all();
+        $data = Bookpdf::all();
         return view('landing.show-all')->with('data', $data);
     }
 
     public function showByCategory(string $category)
     {
         $data = Book::where('category', $category)->get();
+        $data = Bookpdf::where('category', $category)->get();
         return view('landing.show-by-category')->with('data', $data);
     }
 
