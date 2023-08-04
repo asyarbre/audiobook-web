@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookPdfController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LandingController::class, 'allCategory'])->name('landing.index');
 Route::get('/search',[LandingController::class, 'search'])->name('landing.search');
 
-Route::get('/book/{slug}', [BookController::class, 'show'])->name('book.details');
+Route::get('/audiobook/{slug}', [BookController::class, 'show'])->name('book.details');
+Route::get('book/{slug}', [BookPdfController::class, 'show'])->name('bookpdf.details');
 Route::get('/read/{slug}', [ContentController::class, 'show'])->name('book.read');
 
 Route::prefix('category')->group(function () {
@@ -31,6 +33,7 @@ Route::prefix('category')->group(function () {
 Route::prefix('dashboard')->middleware('isLogin')->group(function () {
     Route::resource('book', BookController::class)->name('index', 'book.index');
     Route::resource('content', ContentController::class)->name('index', 'content.index');
+    Route::resource('bookpdf', BookPdfController::class)->name('index', 'bookpdf.index');
 });
 
 Route::get('/auth', [AuthenticationController::class, 'index'])->name('auth.index')->middleware('guest');

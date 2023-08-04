@@ -13,6 +13,7 @@
 
 <body data-theme="emerald">
     @yield('content')
+    @stack('scripts')
 </body>
 
 </html>
