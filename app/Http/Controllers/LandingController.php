@@ -48,6 +48,7 @@ class LandingController extends Controller
         $search = $request->search;
         if($search) {
             $data = Book::where('title', 'LIKE', '%' . $search . '%')->get();
+            $data = Bookpdf::where('title', 'LIKE', '%' . $search . '%')->get();
             return view('landing.search')->with('data', $data);
         } else {
             $data = [];
