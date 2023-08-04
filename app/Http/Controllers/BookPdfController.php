@@ -85,9 +85,10 @@ class BookPdfController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        //
+        $data = Bookpdf::where('slug', $slug)->first();
+        return view('landing.bookpdf')->with('data', $data);
     }
 
     /**
